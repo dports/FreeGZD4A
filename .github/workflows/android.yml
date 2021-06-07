@@ -22,7 +22,7 @@ jobs:
     - name: setup android-ndk
       uses: nttld/setup-ndk@v1
       with:
-        ndk-version: r21d
+        ndk-version: r21e
         add-to-path: true
       
     - name: Grant execute permission for gradlew

@@ -23,9 +23,8 @@ jobs:
       uses: nttld/setup-ndk@v1
       with:
         ndk-version: r21e
-      env:
-      ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
-
+        add-to-path: false
+      
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle

@@ -22,10 +22,16 @@ jobs:
     - name: setup android-ndk
       uses: nttld/setup-ndk@v1
       with:
-        ndk-version: r21e
-        add-to-path: false
+        ndk-version: r21d
+        add-to-path: true
       
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+    - name: Build Freedoom-Android
+      run: |
+          git submodule update --init
+          pushd doom/src/main/jni
+          ndk-build
+          popd
+          cd doom
+          ../gradlew assembleRelease

@@ -55,8 +55,8 @@ public class LaunchFragmentGZdoom extends Fragment {
 
     if (gameArgsTextView
         == null) // rare device call onHiddenchange before the view is created, detect this to
-                 // prevent crash
-    return;
+      // prevent crash
+      return;
 
     refreshGames();
     super.onHiddenChanged(hidden);

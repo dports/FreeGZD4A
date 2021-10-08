@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/doom"
+    schedule:
+      interval: "daily"
+      time: 12:00
+      timezone: US/Central
+
+  - package-ecosystem: "maven"
+    directory: "/doom" #
+    schedule:
+      interval: "daily"
+      time: 12:00
+      timezone: US/Central

@@ -34,7 +34,8 @@ jobs:
           ndk-build
           popd
           cd doom
-          ../gradlew assembleRelease
+          ../gradlew assembleDebug --stacktrace
+          #../gradlew assembleRelease
 
     - uses: r0adkll/sign-android-release@v1
       name: Sign app APK

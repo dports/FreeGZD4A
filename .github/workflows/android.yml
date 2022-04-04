@@ -34,18 +34,14 @@ jobs:
           ndk-build
           popd
           cd doom
-          ../gradlew assembleDebug --stacktrace
-          #../gradlew assembleRelease
+          ../gradlew assembleRelease
 
     - uses: r0adkll/sign-android-release@v1
       name: Sign app APK
       # ID used to access action output
       id: sign_app
       with:
-        releaseDirectory: app/build/outputs/apk/release
+        releaseDirectory: build/outputs/apk/release
         signingKeyBase64: ${{ secrets.SIGNING_KEY }}
         alias: ${{ secrets.ALIAS }}
         keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-      env:
-        # override default build-tools version (29.0.3) -- optional
-        BUILD_TOOLS_VERSION: "28.0.3"

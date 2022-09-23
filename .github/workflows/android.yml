@@ -38,13 +38,11 @@ jobs:
           cd doom
           ../gradlew assembleRelease
 
-   # - uses: r0adkll/sign-android-release@v1
-    #  name: Sign app APK
-      # ID used to access action output
-     # id: sign_app
-   #   with:
-     #   releaseDirectory: build/outputs/apk/release
-      #  signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-      #  alias: ${{ secrets.ALIAS }}
-        #keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+    - name: Release APK
+      uses: ShowMeThe/github_action_release@v0.01
 
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.0
+      #with:
+        # A file, directory or wildcard pattern that describes what to upload
+        #path: 
